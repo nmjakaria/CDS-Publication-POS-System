@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="https://lh3.googleusercontent.com/d/1QLodtIqTdvkjlyUhzx91xrI3offtlD5K">
     <base target="_top">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -5258,7 +5259,7 @@
                 <div className="login-container">
                     <div className="login-box">
                         <img src="https://drive.google.com/thumbnail?authuser=0&sz=w500&id=104Jk8sbjJtZbgl-5M9VIH2avnpZE1-Ms" alt="Logo" className="login-logo" />
-                        <h2><i className="fas fa-tree"></i> {BN()}</h2>
+                        <h2><i className="fas fa-book"></i> {BN()}</h2>
                         <div className="login-panel-wrap">
                             <div key={mode} className={'login-panel ' + direction}>
                                 <form onSubmit={handleLogin}>
@@ -5281,7 +5282,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div className="login-footer">Powered by Naimullah Scripts</div>
+                        <div className="login-footer">Powered by NM Jakaria</div>
                     </div>
                 </div>
             );
@@ -5396,7 +5397,7 @@
                 supplier_ledger: 'fas fa-file-invoice-dollar',
                 purchases: 'fas fa-shopping-cart',
                 purchase_detail: 'fas fa-file-alt',
-                item: 'fas fa-tree',
+                item: 'fas fa-book',
                 bulk_import: 'fas fa-file-import',
                 customers: 'fas fa-user-friends',
                 customer_ledger: 'fas fa-file-invoice',
@@ -5418,7 +5419,7 @@
                     {sidebarOpen && <div className="sidebar-overlay show" onClick={() => setSidebarOpen(false)}></div>}
                     <div className={`sidebar ${sidebarOpen ? 'open' : ''} ${sidebarCollapsed ? 'collapsed' : ''}`}>
                         <div className="sidebar-brand" style={{ padding: sidebarCollapsed ? '14px 8px' : '20px 24px', borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: '62px' }}>
-                            {!sidebarCollapsed && <div style={{ color: 'white', fontSize: '20px', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '10px' }}><i className="fas fa-tree"></i><span className="sidebar-brand-text">{BN()}</span></div>}
+                            {!sidebarCollapsed && <div style={{ color: 'white', fontSize: '20px', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '10px' }}><i className="fas fa-book"></i><span className="sidebar-brand-text">{BN()}</span></div>}
                             <button className="sidebar-collapse-btn" onClick={toggleCollapse} title={sidebarCollapsed ? 'Expand' : 'Collapse'} style={sidebarCollapsed ? { margin: '0 auto' } : {}}><i className={`fas fa-chevron-${sidebarCollapsed ? 'right' : 'left'}`}></i></button>
                         </div>
                         <div className="sidebar-user-info">
@@ -5433,7 +5434,7 @@
                                 {canSeeSales && <li><button className={activeMenu === 'pos' ? 'active' : ''} onClick={() => navigate('pos')}><i className="fas fa-cash-register"></i><span>POS / New Sale</span></button></li>}
                                 {canSeeSales && <li><button className={activeMenu === 'sales' ? 'active' : ''} onClick={() => navigate('sales')}><i className="fas fa-receipt"></i><span>Sales List</span></button></li>}
                                 {canSeeCustomers && <li><button className={activeMenu === 'customers' || activeMenu === 'customer_ledger' ? 'active' : ''} onClick={() => navigate('customers')}><i className="fas fa-user-friends"></i><span>Customers</span></button></li>}
-                                <li><button className={activeMenu === 'item' ? 'active' : ''} onClick={() => navigate('item')}><i className="fas fa-tree"></i><span>Item Inventory</span></button></li>
+                                <li><button className={activeMenu === 'item' ? 'active' : ''} onClick={() => navigate('item')}><i className="fas fa-book"></i><span>Item Inventory</span></button></li>
                                 {canSeePurchases && <li><button className={activeMenu === 'purchases' || activeMenu === 'purchase_detail' ? 'active' : ''} onClick={() => navigate('purchases')}><i className="fas fa-shopping-cart"></i><span>Purchases</span></button></li>}
                                 {canSeeSuppliers && <li><button className={activeMenu === 'suppliers' || activeMenu === 'supplier_ledger' ? 'active' : ''} onClick={() => navigate('suppliers')}><i className="fas fa-handshake"></i><span>Suppliers</span></button></li>}
                                 {canSeePayments && <li><button className={activeMenu === 'payments' ? 'active' : ''} onClick={() => navigate('payments')}><i className="fas fa-money-bill-wave"></i><span>Payments</span></button></li>}
@@ -5461,7 +5462,7 @@
                         <button className={'bnav-item' + (activeMenu === 'dashboard' ? ' active' : '')} onClick={() => navigate('dashboard')}><i className="fas fa-chart-line"></i><span>Home</span></button>
                         {isWarehouse ? (
                             <>
-                                <button className={'bnav-item' + (activeMenu === 'item' ? ' active' : '')} onClick={() => navigate('item')}><i className="fas fa-tree"></i><span>Item</span></button>
+                                <button className={'bnav-item' + (activeMenu === 'item' ? ' active' : '')} onClick={() => navigate('item')}><i className="fas fa-book"></i><span>Item</span></button>
                                 <button className={'bnav-item' + (activeMenu === 'purchases' || activeMenu === 'purchase_detail' ? ' active' : '')} onClick={() => navigate('purchases')}><i className="fas fa-shopping-cart"></i><span>Purchases</span></button>
                                 <button className={'bnav-item' + (activeMenu === 'categories' ? ' active' : '')} onClick={() => navigate('categories')}><i className="fas fa-th-large"></i><span>Categories</span></button>
                             </>
@@ -5774,7 +5775,7 @@
 
             const actions = role === 'admin' || role === 'manager' ? [
                 { id: 'pos', ico: 'fa-cash-register', color: '#2e7d32', title: 'New Sale', sub: 'Start POS' },
-                { id: 'item', ico: 'fa-tree', color: '#6f42c1', title: 'Item Inventory', sub: 'Manage stock' },
+                { id: 'item', ico: 'fa-book', color: '#6f42c1', title: 'Item Inventory', sub: 'Manage stock' },
                 { id: 'purchases', ico: 'fa-shopping-cart', color: '#1565c0', title: 'Purchases', sub: 'Add shipment' },
                 { id: 'payments', ico: 'fa-money-bill-wave', color: '#e65100', title: 'Payments', sub: 'View ledger' },
                 { id: 'reports', ico: 'fa-chart-bar', color: '#00838f', title: 'Reports', sub: 'P&L, analytics' },
@@ -5785,7 +5786,7 @@
                 { id: 'customers', ico: 'fa-user-friends', color: '#6f42c1', title: 'Customers', sub: 'Browse / add' },
                 { id: 'due_reminders', ico: 'fa-bell', color: '#e65100', title: 'Due Reminders', sub: 'Pending payments' }
             ] : [
-                { id: 'item', ico: 'fa-tree', color: '#2e7d32', title: 'Item Inventory', sub: 'Browse stock' },
+                { id: 'item', ico: 'fa-book', color: '#2e7d32', title: 'Item Inventory', sub: 'Browse stock' },
                 { id: 'bulk_import', ico: 'fa-file-import', color: '#1565c0', title: 'Bulk Import', sub: 'CSV upload' },
                 { id: 'purchases', ico: 'fa-shopping-cart', color: '#6f42c1', title: 'Purchases', sub: 'View / add' },
                 { id: 'categories', ico: 'fa-th-large', color: '#e65100', title: 'Categories', sub: 'Manage groups' }
@@ -5913,7 +5914,7 @@
                                 <ul className="dash-timeline">
                                     {feed.map((a, i) => (
                                         <li key={i} className="dash-tl-item">
-                                            <div className={'dash-tl-ico ' + a.type}><i className={'fas ' + (a.type === 'sale' ? 'fa-receipt' : a.type === 'payment' ? 'fa-money-bill-wave' : 'fa-tree')}></i></div>
+                                            <div className={'dash-tl-ico ' + a.type}><i className={'fas ' + (a.type === 'sale' ? 'fa-receipt' : a.type === 'payment' ? 'fa-money-bill-wave' : 'fa-book')}></i></div>
                                             <div className="dash-tl-content">
                                                 <div className="dash-tl-text">{a.text}</div>
                                                 <div className="dash-tl-meta"><i className="fas fa-clock"></i> {fmtDate(a.date)} {a.amt != null && <span className="dash-tl-amt">{tk(a.amt)}</span>}</div>
